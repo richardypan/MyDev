@@ -1,1 +1,26 @@
 
+name: Run Python Code
+
+# This allows you to manually trigger it from the Actions tab
+on:
+  workflow_dispatch:
+
+jobs:
+  run-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository so the runner has access to your files
+      - name: Checkout repository
+      uses: actions/checkout@v4
+
+      # Install Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Run your Python script
+      # Change script.py to the filename you want to run
+      - name: Run Python script
+        run: python script.py
