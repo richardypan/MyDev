@@ -39,9 +39,9 @@ def performance_screen(tickers, date1, date2, date3, drop_pct, rise_pct):
                 "Price2": p2,
                 "Price3": p3,
             })
-
+    print("Second Hello from tickerscreen1.py!")
     return pd.DataFrame(results)
-print("Second Hello from tickerscreen1.py!")
+print("Third Hello from tickerscreen1.py!")
 
 # ------------------------------
 # Example use
@@ -54,7 +54,7 @@ date2 = "2024-11-05
 date3 = "2024-12-05"
 
 drop_threshold = 50   # Must fall at least 10%
-rise_threshold = 5   # Must rise at least 20%
+rise_threshold = 5   # Must rise at least 5%
 
 df = performance_screen(tickers, date1, date2, date3, drop_threshold, rise_threshold)
 print(df)
