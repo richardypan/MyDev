@@ -1,10 +1,12 @@
 
 
-print("Hello from tickerscreen1.py!")
+
 
 import yfinance as yf
 import pandas as pd
 
+print("Hello from tickerscreen1.py!")
+print(yf.download("AAPL", period="1d"))
 def get_price(ticker, date):
     """Fetch the adjusted close price on or nearest after a given date."""
     data = yf.download(ticker, start=date, end=date, progress=False)
@@ -58,5 +60,6 @@ rise_threshold = 5   # Must rise at least 5%
 
 df = performance_screen(tickers, date1, date2, date3, drop_threshold, rise_threshold)
 print(df)
+
 
 
