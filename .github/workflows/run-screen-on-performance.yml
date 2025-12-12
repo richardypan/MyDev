@@ -1,0 +1,29 @@
+# This is a basic workflow that is manually triggered
+
+
+# .github/workflows/run-screen-on-performance
+name: run-screen-on-performance
+
+on:
+  workflow_dispatch:  # Manual trigger from GitHub Actions UI
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  # or your preferred version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run stock screening script
+        run: |
+          python stock_screen_on_performance.py
