@@ -26,4 +26,4 @@ jobs:
 
       - name: Run stock screening script
         run: |
-          python stock_screen_on_performance.py
+          python tickerscreen1.py
